@@ -1,0 +1,10 @@
+.site-list {
+  @include clear-indents;
+  list-style: none;
+  background-color: $color-white;
+}
+
+.site-list__item-link {
+  color: inherit;
+  text-decoration: none;
+}

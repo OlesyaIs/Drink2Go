@@ -1,0 +1,19 @@
+.section-header {
+  @include clear-indents;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4px;
+  text-align: center;
+}
+
+.section-header__tag {
+  @include clear-indents;
+  font-size: $font-size-smaller;
+}
+
+.section-header__title {
+  @include clear-indents;
+  font-size: $font-size-h2;
+  line-height: 36px;
+}

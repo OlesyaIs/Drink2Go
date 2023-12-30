@@ -1,0 +1,42 @@
+.fields-group {
+  @include clear-indents;
+  border: none;
+}
+
+.fields-group__title {
+  @include clear-indents;
+  margin-bottom: 20px;
+  font-size: $font-size-legend;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.fields-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  &--range {
+    row-gap: 24px;
+  }
+}
+
+.fields-group__slider {
+  @include clear-indents;
+}
+
+.fields-group--range .fields-group__inputs-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 18px;
+}
+
+.fields-group__separator {
+  @include clear-indents;
+  width: 8px;
+  height: 2px;
+  background-color: $color-gray;
+  border: none;
+}

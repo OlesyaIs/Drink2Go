@@ -1,0 +1,38 @@
+.page-footer {
+  @include clear-indents;
+}
+
+.page-footer__wrapper {
+  margin: 0 auto;
+  @include side-paddings;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  min-width: $mobile-width;
+  max-width: $desktop-width;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.page-footer__base {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.page-footer__socials {
+  @include clear-indents;
+}
+
+.page-footer__menu {
+  @include clear-indents;
+}
+
+.page-footer__copyright {
+  align-self: center;
+  font-size: $font-size-smaller;
+  line-height: 16px;
+  color: $color-gray;
+}

@@ -1,0 +1,24 @@
+.advantages {
+  @include clear-indents;
+  background-color: $color-white;
+}
+
+.advantages__wrapper {
+  @include side-paddings;
+  padding-top: 50px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 36px;
+}
+
+.advantages__list {
+  @include clear-indents;
+  display: grid;
+  justify-content: center;
+  justify-items: start;
+  align-items: center;
+  row-gap: 32px;
+  column-gap: 30px;
+  list-style: none;
+}

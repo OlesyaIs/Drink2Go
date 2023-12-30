@@ -1,0 +1,7 @@
+.products-list {
+  @include clear-indents;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+}

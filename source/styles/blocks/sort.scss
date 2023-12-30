@@ -1,0 +1,22 @@
+.sort {
+  @include clear-indents;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.sort__label {
+  @include clear-indents;
+  font-size: $font-size-legend;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.sort__select {
+  @include clear-indents;
+  padding: 4px 10px;
+  font-family: $font-family-default;
+  border: none;
+  background-color: transparent;
+}
