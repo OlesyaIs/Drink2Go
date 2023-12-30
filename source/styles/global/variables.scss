@@ -1,1 +1,45 @@
 /* здесь используйте глобальные переменные */
+//
+$mobile-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1440px;
+
+// base colors
+$color-white: #ffffff;
+$color-gray-lightest: #f8f8f8;
+$color-gray-light: #e2e2e2;
+$color-gray: #bdbdbd;
+$color-black: #333333;
+$color-primary: #7859cf;
+$color-secondary: #f0ebff;
+
+//alt colors
+$color-primary-light: #9070ec;
+$color-primary-dark: #593cac;
+$color-primary-025: rgba (120, 89, 207, 0.25);
+
+
+// background colors
+$bg-color: $color-gray-lightest;
+$bg-color-flat: #f3ebe1;
+$bg-color-lavender: #eae6fc;
+$bg-color-espresso: #e5e6e8;
+
+// side paddings
+$page-indent: 20px;
+
+// font-family
+$font-family-default: "Montserrat", "Arial", sans-serif;
+
+// font-sizes
+$font-size-default: 14px;
+$font-size-smaller: 12px;
+$font-size-slide-title: 36px;
+$font-size-h2: 24px;
+$font-size-h3: 18px;
+$font-size-legend: 16px;
+$font-size-input: 16px;
+$font-size-button-default: 16px;
+$font-size-menu: 14px;
+
+$line-height-button-default: 24px;

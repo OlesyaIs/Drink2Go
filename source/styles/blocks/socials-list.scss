@@ -1,0 +1,22 @@
+.socials-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.socials-list__item {
+  padding: 9px;
+  min-width: 40px;
+  min-height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials-list__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

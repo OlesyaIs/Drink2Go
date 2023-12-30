@@ -1,0 +1,10 @@
+.user-list {
+  @include clear-indents;
+  display: flex;
+  list-style: none;
+}
+
+.user-list__item-link {
+  color: inherit;
+  text-decoration: none;
+}

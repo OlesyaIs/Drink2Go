@@ -1,0 +1,10 @@
+.page__body {
+  @include clear-indents;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  position: relative;
+  font-family: $font-family-default;
+  font-size: $font-size-default;
+  color: $color-black;
+  background-color: $color-white;
+}

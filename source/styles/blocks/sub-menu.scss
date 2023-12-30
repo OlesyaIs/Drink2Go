@@ -1,0 +1,13 @@
+.sub-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+}
+
+.sub-menu__link {
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+}

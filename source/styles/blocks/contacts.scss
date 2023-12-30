@@ -1,0 +1,20 @@
+.contacts {
+  font-style: normal;
+}
+
+.contacts__list {
+  @include clear-indents;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+}
+
+.contacts__item > * {
+  @include clear-indents;
+}
+
+.contacts__link {
+  color: inherit;
+  text-decoration: none;
+}

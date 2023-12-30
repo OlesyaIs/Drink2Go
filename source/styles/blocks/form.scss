@@ -1,0 +1,23 @@
+.form {
+  @include clear-indents;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.form__fieldsets-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.form__buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.form__button {
+  font-size: $font-size-button-default;
+  line-height: $line-height-button-default;
+}
