@@ -1,3 +1,44 @@
 .promo {
   @include clear-indents;
+  min-width: $mobile-width;
+}
+
+.promo__slider {
+  width: 100%;
+}
+
+.promo__slider-wrapper {
+  align-items: stretch;
+}
+
+.promo__slider-button {
+  border: none;
+  background-color: transparent;
+
+  &::after {
+    display: none;
+  }
+}
+
+.promo__slider-button--next {
+  .promo__slider-button-icon {
+    transform: rotate(180deg);
+  }
+}
+
+.promo__toggles {
+  display: none;
+  margin-bottom: 54px;
+}
+
+.promo__toggles > .swiper-pagination-bullet {
+  width: 62px;
+  height: 4px;
+  border-radius: 0;
+  background-color: $color-white;
+  opacity: 1;
+}
+
+.promo__toggles > .swiper-pagination-bullet-active {
+  background-color: $color-primary;
 }
