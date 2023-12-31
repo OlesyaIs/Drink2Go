@@ -1,25 +1,19 @@
 .page-header {
   @include clear-indents;
+  min-height: $header-height;
+  position: relative;
   font-size: $font-size-smaller;
   line-height: 16px;
   font-weight: 500;
   color: $color-black;
   background-color: $color-white;
+  z-index: 2;
 }
 
 .page-header__wrapper {
   margin: 0 auto;
-  @include side-paddings;
   min-width: $mobile-width;
   max-width: $desktop-width;
-
-  display: flex;
-  justify-content: space-between;
 }
 
-.page-header__logo {
-  padding: 12px 0;
-  display: inline-block;
-  color: inherit;
-  text-decoration: none;
-}
+
