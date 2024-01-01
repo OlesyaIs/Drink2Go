@@ -1,3 +1,19 @@
-// .full-price {
+.full-price {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+  line-height: $line-height-price;
+  vertical-align: middle;
+}
 
-// }
+.full-price__old {
+  font-size: $font-size-price-old;
+  font-weight: 400;
+  color: $color-primary;
+  text-decoration: line-through;
+}
+
+.full-price__new {
+  font-size: $font-size-price;
+  font-weight: 600;
+}

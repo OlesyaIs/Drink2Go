@@ -8,3 +8,15 @@
   width: 100%;
   height: 420px;
 }
+
+@media (min-width: $tablet-width) {
+  .map__wrapper {
+    height: 480px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .map__wrapper {
+    height: 540px;
+  }
+}

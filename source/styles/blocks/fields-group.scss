@@ -1,6 +1,15 @@
 .fields-group {
   @include clear-indents;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
   border: none;
+
+    &--range {
+      row-gap: 24px;
+    }
 }
 
 .fields-group__title {
@@ -11,25 +20,15 @@
   font-weight: 600;
 }
 
-.fields-group {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-
-  &--range {
-    row-gap: 24px;
-  }
-}
-
 .fields-group__slider {
   @include clear-indents;
 }
 
 .fields-group--range .fields-group__inputs-wrapper {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(88px, 1fr) 8px minmax(50px, 1fr);
+  // justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   column-gap: 18px;
 }
 

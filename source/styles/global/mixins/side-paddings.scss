@@ -1,4 +1,9 @@
 @mixin side-paddings {
   padding-left: $page-indent;
   padding-right: $page-indent;
+
+  @media (min-width: $desktop-width) {
+    padding-left: $page-indent-desktop;
+    padding-right: $page-indent-desktop;
+  }
 }

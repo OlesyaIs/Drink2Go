@@ -1,5 +1,11 @@
-.copyright__link {
+.copyright {
   display: flex;
+}
+
+.copyright__link {
+  margin: 0 auto;
+  display: flex;
+  justify-items: center;
   align-items: center;
   gap: 4px;
   color: inherit;

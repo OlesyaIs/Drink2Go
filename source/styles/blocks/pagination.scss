@@ -6,3 +6,42 @@
   gap: 20px;
   list-style: none;
 }
+
+.pagination__item {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pagination__link {
+  padding: 8px;
+  min-width: 40px;
+  min-height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $font-size-bigger;
+  line-height: 24px;
+  font-weight: 400;
+  color: $color-primary;
+  text-decoration: none;
+  background-color: $color-white;
+  cursor: pointer;
+}
+
+.pagination__item--current .pagination__link {
+  font-weight: 600;
+  color: $color-black;
+  background: none;
+  cursor: default;
+}
+
+.pagination__link-text {
+  margin: 0 12px;
+}
+
+@media (max-width: $mobile-width-only) {
+  .pagination__link-text {
+    @include visually-hidden;
+  }
+}

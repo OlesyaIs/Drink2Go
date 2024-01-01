@@ -76,7 +76,7 @@ noUiSlider.create(range, {
     'min': 0,
     'max': 1000,
   },
-  start: [50, 900],
+  start: [0, 900],
   step: 1,
   behaviour: 'snap',
   tooltips: false,

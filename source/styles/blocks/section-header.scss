@@ -17,3 +17,10 @@
   font-size: $font-size-h2;
   line-height: 36px;
 }
+
+@media (min-width: $tablet-width) {
+  .section-header__title {
+    font-size: $font-size-h2-tablet;
+    line-height: 64px;
+  }
+}

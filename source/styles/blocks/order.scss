@@ -10,10 +10,23 @@
 
 .order__price {
   @include clear-indents;
+  font-size: $font-size-price;
+  line-height: 32px;
+  font-weight: 600;
 }
 
 .order__button {
   align-self: flex-start;
+  display: flex;
+  column-gap: 6px;
+  align-items: center;
   font-size: $font-size-button-default;
   line-height: $line-height-button-default;
+
+  &::before {
+    content: "";
+    width: 20px;
+    height: 16px;
+    background: url("../../../raw/images/icons/basket.svg")
+  }
 }

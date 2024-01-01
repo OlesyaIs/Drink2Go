@@ -1,9 +1,11 @@
 .field {
   display: flex;
   align-items: center;
-  &--price {
-    flex-grow: 1;
-    flex-shrink: 1;
+}
+
+.field--price {
+  .field__input {
+    width: 100%;
   }
 }
 

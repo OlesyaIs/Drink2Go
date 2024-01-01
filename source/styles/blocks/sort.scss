@@ -1,22 +1,35 @@
 .sort {
   @include clear-indents;
-  display: flex;
-  justify-content: flex-end;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: min-content 1fr;
   align-items: center;
   column-gap: 8px;
+  line-height: 24px;
 }
 
 .sort__label {
   @include clear-indents;
   font-size: $font-size-legend;
-  line-height: 24px;
   font-weight: 600;
 }
 
-.sort__select {
-  @include clear-indents;
-  padding: 4px 10px;
-  font-family: $font-family-default;
-  border: none;
-  background-color: transparent;
+.sort__select-wrapper {
+  padding: 4px 10px 4px 0;
+  width: 100%;
 }
+
+// .sort__select {
+//   @include clear-indents;
+//   width: 100%;
+//   font-family: $font-family-default;
+//   font-size: $font-size-bigger;
+//   line-height: 24px;
+//   font-weight: 600;
+//   text-align: end;
+//   color: $color-primary;
+//   border: none;
+//   background-color: transparent;
+//   text-wrap: wrap;
+//   overflow: visible;
+// }

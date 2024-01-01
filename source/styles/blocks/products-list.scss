@@ -1,7 +1,14 @@
 .products-list {
   @include clear-indents;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  justify-content: center;
   gap: 20px;
   list-style: none;
+}
+
+@media (min-width: $tablet-width) {
+  .products-list {
+    gap: 30px;
+  }
 }
