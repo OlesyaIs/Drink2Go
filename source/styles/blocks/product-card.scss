@@ -7,7 +7,9 @@
   row-gap: 24px;
   flex-direction: column;
   align-items: center;
+  border-radius: 4px;
   background-color: $color-white;
+  overflow: hidden;
 }
 
 .product-card__wrapper {
@@ -67,5 +69,9 @@
 @media (min-width: $desktop-width) {
   .product-card {
     min-height: 460px;
+
+    &:hover, &:focus-visible {
+      box-shadow: 0px 5px 15px 0px $color-true-black-015;
+    }
   }
 }

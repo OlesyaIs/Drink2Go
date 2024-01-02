@@ -11,6 +11,7 @@
   border-radius: 4px;
   border: none;
   background-color: $color-primary;
+  cursor: pointer;
 
   &:hover, &:focus {
     background-color: $color-primary-light;
@@ -22,6 +23,7 @@
 
   &:disabled {
     background-color: $color-gray;
+    cursor: default;
   }
 }
 

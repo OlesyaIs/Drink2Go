@@ -27,6 +27,21 @@
   text-decoration: none;
   background-color: $color-white;
   cursor: pointer;
+
+  &:hover, &:focus-visible {
+    color: $color-white;
+    background-color: $color-primary-light;
+  }
+
+  &:active {
+    color: $color-white;
+    background-color: $color-primary-dark;
+  }
+
+  &:disabled {
+    color: $color-white;
+    background-color: $color-gray-light;
+  }
 }
 
 .pagination__item--current .pagination__link {
@@ -36,11 +51,24 @@
   cursor: default;
 }
 
+.pagination__link-icon {
+  display: none;
+  fill: currentColor;
+}
+
+.pagination__item--next .pagination__link-icon {
+  transform: rotate(180deg);
+}
+
 .pagination__link-text {
   margin: 0 12px;
 }
 
 @media (max-width: $mobile-width-only) {
+  .pagination__link-icon {
+    display: block;
+  }
+
   .pagination__link-text {
     @include visually-hidden;
   }

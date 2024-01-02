@@ -11,37 +11,35 @@
   &::before {
     content: "";
     margin: auto;
+    width: 52px;
     height: 56px;
     display: block;
     position: absolute;
     top: 0;
+    background-repeat: no-repeat;
   }
 
   &--speed {
     &::before {
-      width: 50px;
-      background: url("../../../raw/images/icons/advantages/speed.svg");
+      background-image: url("../../images/advantages/speed.svg");
     }
   }
 
   &--fit {
     &::before {
-      width: 52px;
-      background: url("../../../raw/images/icons/advantages/fit.svg");
+      background-image: url("../../images/advantages/fit.svg");
     }
   }
 
   &--energy {
     &::before {
-      width: 42px;
-      background: url("../../../raw/images/icons/advantages/energy.svg");
+      background-image: url("../../images/advantages/energy.svg");
     }
   }
 
   &--eco {
     &::before {
-      width: 46px;
-      background: url("../../../raw/images/icons/advantages/ecology.svg");
+      background-image: url("../../images/advantages/ecology.svg");
     }
   }
 }

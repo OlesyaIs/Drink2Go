@@ -5,6 +5,7 @@
 
 .advantages__wrapper {
   @include side-paddings;
+  @include page-center;
   padding-top: 50px;
   padding-bottom: 60px;
   display: flex;

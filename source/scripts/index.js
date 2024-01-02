@@ -44,7 +44,7 @@ const createCustomPopup = (point) => {
 };
 
 const markerIcon = L.icon({
-  iconUrl: '../../raw/images/icons/map-pin.svg',
+  iconUrl: 'images/map/map-pin.svg',
   iconSize: [38, 50],
   iconAnchor: [19, 50],
 });

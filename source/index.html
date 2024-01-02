@@ -2,51 +2,70 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Интернет-магазин Drink2Go</title>
     <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
-    <link rel="stylesheet" href="vendor/noUiSlider-15.7.1/nouislider.min.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicons/favicon.svg" sizes="any" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="vendor/swiper-11.0.5/swiper-bundle.min.css">
+    <link rel="stylesheet" href="vendor/noUiSlider-15.7.1/nouislider.min.css">
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body class="page__body">
+
     <header class="page-header">
       <div class="page-header__wrapper">
         <nav class="main-nav main-nav--close main-nav--nojs">
           <a class="main-nav__logo" href="#">
-            <img class="main-nav__logo-image" src="../raw/images/logo/logo-icon.svg" width="32" height="36" alt="Логотип Drink2Go">
+            <picture>
+              <source media="(min-width: 1440px)" srcset="images/logo/logo-full.svg">
+              <source media="(min-width: 768px)" srcset="images/logo/logo-short.svg">
+              <img class="main-nav__logo-image" src="images/logo/logo-icon.svg" width="32" height="36" alt="Логотип Drink2Go">
+            </picture>
             <span class="main-nav__logo-text">Интернет-магазин<br>кофейных напитков</span>
           </a>
           <ul class="main-nav__site-list site-list">
             <li class="site-list__item site-list__item--current">
-              <a class="site-list__item-link" href="#">Главная</a>
+              <a class="nav-button" href="#">Главная</a>
             </li>
             <li class="site-list__item">
-              <a class="site-list__item-link" href="404.html" target="_blank">Каталог</a>
+              <a class="nav-button" href="404.html" target="_blank">Каталог</a>
             </li>
             <li class="site-list__item">
-              <a class="site-list__item-link" href="404.html" target="_blank">Доставка</a>
+              <a class="nav-button" href="404.html" target="_blank">Доставка</a>
             </li>
             <li class="site-list__item">
-              <a class="site-list__item-link" href="404.html" target="_blank">О нас</a>
+              <a class="nav-button" href="404.html" target="_blank">О нас</a>
             </li>
           </ul>
           <ul class="main-nav__user-list user-list">
-            <li class="user-list__item user-list__item--login nav-button">
-              <a class="user-list__item-link" href="404.html" target="_blank">
-                <img class="user-list__item-icon" src="../raw/images/icons/user.svg" width="16" height="16" alt="login-icon">
-                <span class="user-list__item-text">Войти</span>
+            <li class="user-list__item user-list__item--login">
+              <a class="nav-button" href="404.html" target="_blank">
+                <svg class="user-list__icon" width="16" height="16">
+                  <use xlink:href="images/icons/stack.svg#user"></use>
+                </svg>
+                <span class="user-list__text">Войти</span>
               </a>
             </li>
-            <li class="user-list__item user-list__item--basket nav-button">
-              <a class="user-list__item-link" href="404.html" target="_blank">
-                <img class="user-list__item-icon" src="../raw/images/icons/basket.svg" width="16" height="16" alt="basket-icon">
-                <span class="user-list__item-text">Корзина</span>
+            <li class="user-list__item user-list__item--basket">
+              <a class="nav-button" href="404.html" target="_blank">
+                <svg class="user-list__icon" width="16" height="16">
+                  <use xlink:href="images/icons/stack.svg#basket"></use>
+                </svg>
+                <span class="user-list__text">Корзина</span>
               </a>
             </li>
           </ul>
-          <button class="main-nav__menu-toggle nav-button" type="button">
+          <button class="main-nav__menu-toggle menu-toggle nav-button" type="button">
+            <svg class="main-nav__menu-toggle-icon main-nav__menu-toggle-icon--open" width="16" height="16">
+              <use xlink:href="images/icons/stack.svg#burger-button"></use>
+            </svg>
+            <svg class="main-nav__menu-toggle-icon main-nav__menu-toggle-icon--close" width="12" height="12">
+              <use xlink:href="images/icons/stack.svg#close-button"></use>
+            </svg>
             <span class="visually-hidden">Открыть меню</span>
           </button>
         </nav>
@@ -60,57 +79,88 @@
           <div class="promo__slider-wrapper swiper-wrapper">
             <div class="new-product-card new-product-card--flat swiper-slide">
               <div class="new-product-card__wrapper">
-                <h3 class="new-product-card__title">Декаф Флэт Уайт</h3>
-                <p class="new-product-card__tag tag tag--new">новинка!</p>
-                <p class="new-product-card__description">Свежесваренный кофе без кофеина из&nbsp;Эфиопии с&nbsp;натуральным фермерским молоком — то, что нужно для&nbsp;расслабления после тяжёлого рабочего дня</p>
-                <div class="new-product-card__order order">
-                  <p class="order__full-price full-price">
-                    <span class="full-price__old">295₽</span>
-                    <span class="full-price__new">225₽</span>
-                  </p>
-                  <button class="order__button button" type="button">Заказать</button>
+                <div class="new-product-card__text-wrapper">
+                  <h3 class="new-product-card__title">Декаф Флэт Уайт</h3>
+                  <p class="new-product-card__tag tag">новинка!</p>
+                  <p class="new-product-card__description">Свежесваренный кофе без кофеина из&nbsp;Эфиопии с&nbsp;натуральным фермерским молоком — то, что нужно для&nbsp;расслабления после тяжёлого рабочего дня</p>
+                  <div class="new-product-card__order order">
+                    <p class="order__full-price full-price">
+                      <span class="full-price__old">295₽</span>
+                      <span class="full-price__new">225₽</span>
+                    </p>
+                    <button class="order__button button" type="button">Заказать</button>
+                  </div>
                 </div>
+                <picture class="new-product-card__photo">
+                  <source type="image/webp" media="(min-width: 1440px)" srcset="images/products-promo/flat-white-promo-desktop@1x.webp 1x, images/products-promo/flat-white-promo-desktop@2x.webp 2x">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="images/products-promo/flat-white-promo-tablet@1x.webp 1x, images/products-promo/flat-white-promo-tablet@2x.webp 2x">
+                  <source type="image/webp" srcset="images/products-promo/flat-white-promo-mobile@1x.webp 1x, images/products-promo/flat-white-promo-mobile@2x.webp 2x">
+                  <source media="(min-width: 1440px)" srcset="images/products-promo/flat-white-promo-desktop@1x.png 1x, images/products-promo/flat-white-promo-desktop@2x.png 2x">
+                  <source media="(min-width: 768px)" srcset="images/products-promo/flat-white-promo-tablet@1x.png 1x, images/products-promo/flat-white-promo-tablet@2x.png 2x">
+                  <img class="new-product-card__photo-image" src="images/products-promo/flat-white-promo-mobile@1x.png" srcset="images/products-promo/flat-white-promo-mobile@2x.png 2x" width="280" height="280" alt="Декаф Флэт Уайт в металлической банке с бежевой этикеткой на фоне брызг молока">
+                </picture>
               </div>
-              <img class="new-product-card__image" src="../raw/images/products-promo/flat-white-promo-desktop@1x.png" width="280" height="280" alt="Декаф Флэт Уайт в металлической банке с бежевой этикеткой на фоне брызг молока">
             </div>
             <div class="new-product-card new-product-card--lavender swiper-slide">
               <div class="new-product-card__wrapper">
-                <h3 class="new-product-card__title">Лавандовый Латте</h3>
-                <p class="new-product-card__tag tag tag--new">новинка!</p>
-                <p class="new-product-card__description">Невероятное сочетание перуанской высокогорной арабики с молоком ламы и лавандовым сиропом унесёт вас прямо на вершину Радужных гор</p>
-                <div class="new-product-card__order order">
-                  <p class="order__full-price full-price">
-                    <span class="full-price__old">285₽</span>
-                    <span class="full-price__new">265₽</span>
-                  </p>
-                  <button class="order__button button" type="button">Заказать</button>
+                <div class="new-product-card__text-wrapper">
+                  <h3 class="new-product-card__title">Лавандовый Латте</h3>
+                  <p class="new-product-card__tag tag">новинка!</p>
+                  <p class="new-product-card__description">Невероятное сочетание перуанской высокогорной арабики с молоком ламы и лавандовым сиропом унесёт вас прямо на вершину Радужных гор</p>
+                  <div class="new-product-card__order order">
+                    <p class="order__full-price full-price">
+                      <span class="full-price__old">285₽</span>
+                      <span class="full-price__new">265₽</span>
+                    </p>
+                    <button class="order__button button" type="button">Заказать</button>
+                  </div>
                 </div>
+                <picture class="new-product-card__photo">
+                  <source type="image/webp" media="(min-width: 1440px)" srcset="images/products-promo/lavender-promo-desktop@1x.webp 1x, images/products-promo/lavender-promo-desktop@2x.webp 2x">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="images/products-promo/lavender-promo-tablet@1x.webp 1x, images/products-promo/lavender-promo-tablet@2x.webp 2x">
+                  <source type="image/webp" srcset="images/products-promo/lavender-promo-mobile@1x.webp 1x, images/products-promo/lavender-promo-mobile@2x.webp 2x">
+                  <source media="(min-width: 1440px)" srcset="images/products-promo/lavender-promo-desktop@1x.png 1x, images/products-promo/lavender-promo-desktop@2x.png 2x">
+                  <source media="(min-width: 768px)" srcset="images/products-promo/lavender-promo-tablet@1x.png 1x, images/products-promo/lavender-promo-tablet@2x.png 2x">
+                  <img class="new-product-card__photo-image" src="images/products-promo/lavender-promo-mobile@1x.png" srcset="images/products-promo/lavender-promo-mobile@2x.png 2x" width="280" height="280" alt="Лавандовый латте в металлической банке с сиреневой этикеткой на фоне лаванды">
+                </picture>
               </div>
-              <img class="new-product-card__image" src="../raw/images/products-promo/lavender-promo-desktop.png@1x.png" width="280" height="280" alt="Лавандовый латте в металлической банке с сиреневой этикеткой на фоне лаванды">
             </div>
             <div class="new-product-card new-product-card--espresso swiper-slide">
               <div class="new-product-card__wrapper">
-                <h3 class="new-product-card__title">Тройной Эспрессо</h3>
-                <p class="new-product-card__tag tag tag--new">новинка!</p>
-                <p class="new-product-card__description">Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из Колумбии покажет вам, что такое настоящая бодрость</p>
-                <div class="new-product-card__order order">
-                  <p class="order__full-price full-price">
-                    <span class="full-price__old">395₽</span>
-                    <span class="full-price__new">375₽</span>
-                  </p>
-                  <button class="order__button button" type="button">Заказать</button>
+                <div class="new-product-card__text-wrapper">
+                  <h3 class="new-product-card__title">Тройной Эспрессо</h3>
+                  <p class="new-product-card__tag tag">новинка!</p>
+                  <p class="new-product-card__description">Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из Колумбии покажет вам, что такое настоящая бодрость</p>
+                  <div class="new-product-card__order order">
+                    <p class="order__full-price full-price">
+                      <span class="full-price__old">395₽</span>
+                      <span class="full-price__new">375₽</span>
+                    </p>
+                    <button class="order__button button" type="button">Заказать</button>
+                  </div>
                 </div>
+                <picture class="new-product-card__photo">
+                  <source type="image/webp" media="(min-width: 1440px)" srcset="images/products-promo/espresso-promo-desktop@1x.webp 1x, images/products-promo/espresso-promo-desktop@2x.webp 2x">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="images/products-promo/espresso-promo-tablet@1x.webp 1x, images/products-promo/espresso-promo-tablet@2x.webp 2x">
+                  <source type="image/webp" srcset="images/products-promo/espresso-promo-mobile@1x.webp 1x, images/products-promo/espresso-promo-mobile@2x.webp 2x">
+                  <source media="(min-width: 1440px)" srcset="images/products-promo/espresso-promo-desktop@1x.png 1x, images/products-promo/espresso-promo-desktop@2x.png 2x">
+                  <source media="(min-width: 768px)" srcset="images/products-promo/espresso-promo-tablet@1x.png 1x, images/products-promo/espresso-promo-tablet@2x.png 2x">
+                  <img class="new-product-card__photo-image" src="images/products-promo/espresso-promo-mobile@1x.png" srcset="images/products-promo/espresso-promo-mobile@2x.png 2x" width="280" height="280" alt="Тройной эспрессо в металлической банке с чёрной этикеткой на фоне кофейных зёрен">
+                </picture>
               </div>
-              <img class="new-product-card__image" src="../raw/images/products-promo/espresso-promo-desktop@1x.png" width="280" height="280" alt="Тройной эспрессо в металлической банке с чёрной этикеткой на фоне кофейных зёрен">
             </div>
           </div>
           <button class="promo__slider-button promo__slider-button--prev swiper-button-prev" type="button">
             <span class="visually-hidden">Предыдущий слайд</span>
-            <img class="promo__slider-button-icon" src="../raw/images/icons/leftarrowSlider.svg" width="11" height="20" alt="">
+            <svg class="promo__slider-button-icon" width="11" height="20">
+              <use xlink:href="images/icons/stack.svg#leftarrowSlider"></use>
+            </svg>
           </button>
           <button class="promo__slider-button promo__slider-button--next swiper-button-next" type="button">
-            <span class="visually-hidden">Предыдущий слайд</span>
-            <img class="promo__slider-button-icon" src="../raw/images/icons/leftarrowSlider.svg" width="11" height="20" alt="">
+            <svg class="promo__slider-button-icon" width="11" height="20">
+              <use xlink:href="images/icons/stack.svg#leftarrowSlider"></use>
+            </svg>
+            <span class="visually-hidden">Следующий слайд</span>
           </button>
           <div class="promo__toggles swiper-pagination"></div>
         </div>
@@ -128,7 +178,7 @@
             </li>
             <li class="advantages__item advantage advantage--fit">
               <h3 class="advantage__title">Удобство</h3>
-              <p class="advantage__description">Легко помещается и в карман, и в маленькую сумочку</p>
+              <p class="advantage__description">Легко помещается и в карман, и&nbsp;в&nbsp;маленькую сумочку</p>
             </li>
             <li class="advantages__item advantage advantage--energy">
               <h3 class="advantage__title">Бодрость</h3>
@@ -136,7 +186,7 @@
             </li>
             <li class="advantages__item advantage advantage--eco">
               <h3 class="advantage__title">Экологичность</h3>
-              <p class="advantage__description">Вся упаковка сделана из перерабатываемых материалов</p>
+              <p class="advantage__description">Вся упаковка сделана из&nbsp;перерабатываемых материалов</p>
             </li>
           </ul>
         </div>
@@ -158,7 +208,7 @@
                     <div class="fields-group__inputs-wrapper">
                       <div class="fields-group__field field field--price">
                         <label class="field__title visually-hidden" for="min-price">Минимальная цена</label>
-                        <input class="field__input" type="number" id="min-price" name="min-price" value="0" min="0">
+                        <input class="field__input" type="number" id="min-price" name="min-price" min="0" placeholder="0">
                       </div>
                       <hr class="fields-group__separator">
                       <div class="fields-group__field field field--price">
@@ -235,14 +285,22 @@
                       <a class="product-card__link" href="404.html">
                         <h4 class="product-card__title">Декаф Флэт Уайт</h4>
                       </a>
-                      <p class="product-card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+                      <p class="product-card__description">Кофе без кофеина из Эфиопии с&nbsp;натуральным фермерским молоком</p>
                       <div class="product-card__order order">
                         <p class="order__price">225₽</p>
-                        <button class="order__button button" type="button">В корзину</button>
+                        <button class="order__button button" type="button">
+                          <svg class="order__button-icon" width="20" height="16">
+                            <use xlink:href="images/icons/stack.svg#basket+"></use>
+                          </svg>
+                          В корзину
+                        </button>
                       </div>
                     </div>
                     <a class="product-card__link product-card__link--photo" href="404.html">
-                      <img class="product-card__image" src="../raw/images/products/flat-white@1x.png" width="130" height="188" alt="">
+                      <picture>
+                        <source type="image/webp" srcset="images/products/flat-white@1x.webp 1x, images/products/flat-white@2x.webp 2x">
+                        <img class="product-card__image" src="images/products/flat-white@1x.png" srcset="images/products/flat-white@2x.png 2x" width="130" height="188" alt="">
+                      </picture>
                     </a>
                   </li>
                   <li class="products-list__item product-card">
@@ -250,14 +308,22 @@
                       <a class="product-card__link product-card__link--photo" href="404.html">
                         <h4 class="product-card__title">Декаф Флэт Уайт</h4>
                       </a>
-                      <p class="product-card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+                      <p class="product-card__description">Кофе без кофеина из Эфиопии с&nbsp;натуральным фермерским молоком</p>
                       <div class="product-card__order order">
                         <p class="order__price">225₽</p>
-                        <button class="order__button button" type="button">В корзину</button>
+                        <button class="order__button button" type="button">
+                          <svg class="order__button-icon" width="20" height="16">
+                            <use xlink:href="images/icons/stack.svg#basket+"></use>
+                          </svg>
+                          В корзину
+                        </button>
                       </div>
                     </div>
                     <a class="product-card__link product-card__link--photo" href="404.html">
-                      <img class="product-card__image" src="../raw/images/products/lavender@1x.png" width="130" height="188" alt="">
+                      <picture>
+                        <source type="image/webp" srcset="images/products/lavender@1x.webp 1x, images/products/lavender@2x.webp 2x">
+                        <img class="product-card__image" src="images/products/lavender@1x.png" srcset="images/products/lavender@2x.png 2x" width="130" height="188" alt="">
+                      </picture>
                     </a>
                   </li>
                   <li class="products-list__item product-card">
@@ -265,14 +331,22 @@
                       <a class="product-card__link" href="404.html">
                         <h4 class="product-card__title">Декаф Флэт Уайт</h4>
                       </a>
-                      <p class="product-card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+                      <p class="product-card__description">Кофе без кофеина из Эфиопии с&nbsp;натуральным фермерским молоком</p>
                       <div class="product-card__order order">
                         <p class="order__price">225₽</p>
-                        <button class="order__button button" type="button">В корзину</button>
+                        <button class="order__button button" type="button">
+                          <svg class="order__button-icon" width="20" height="16">
+                            <use xlink:href="images/icons/stack.svg#basket+"></use>
+                          </svg>
+                          В корзину
+                        </button>
                       </div>
                     </div>
                     <a class="product-card__link product-card__link--photo" href="404.html">
-                      <img class="product-card__image" src="../raw/images/products/black@1x.png" width="130" height="188" alt="">
+                      <picture>
+                        <source type="image/webp" srcset="images/products/black@1x.webp 1x, images/products/black@2x.webp 2x">
+                        <img class="product-card__image" src="images/products/black@1x.png" srcset="images/products/black@2x.png 2x" width="130" height="188" alt="">
+                      </picture>
                     </a>
                   </li>
                   <li class="products-list__item product-card">
@@ -280,14 +354,22 @@
                       <a class="product-card__link" href="404.html">
                         <h4 class="product-card__title">Декаф Флэт Уайт</h4>
                       </a>
-                      <p class="product-card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+                      <p class="product-card__description">Кофе без кофеина из Эфиопии с&nbsp;натуральным фермерским молоком</p>
                       <div class="product-card__order order">
                         <p class="order__price">225₽</p>
-                        <button class="order__button button" type="button">В корзину</button>
+                        <button class="order__button button" type="button">
+                          <svg class="order__button-icon" width="20" height="16">
+                            <use xlink:href="images/icons/stack.svg#basket+"></use>
+                          </svg>
+                          В корзину
+                        </button>
                       </div>
                     </div>
                     <a class="product-card__link product-card__link--photo" href="404.html">
-                      <img class="product-card__image" src="../raw/images/products/pink@1x.png" width="130" height="188" alt="">
+                      <picture>
+                        <source type="image/webp" srcset="images/products/pink@1x.webp 1x, images/products/pink@2x.webp 2x">
+                        <img class="product-card__image" src="images/products/pink@1x.png" srcset="images/products/pink@2x.png 2x" width="130" height="188" alt="">
+                      </picture>
                     </a>
                   </li>
                   <li class="products-list__item product-card">
@@ -295,14 +377,22 @@
                       <a class="product-card__link" href="404.html">
                         <h4 class="product-card__title">Декаф Флэт Уайт</h4>
                       </a>
-                      <p class="product-card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+                      <p class="product-card__description">Кофе без кофеина из Эфиопии с&nbsp;натуральным фермерским молоком</p>
                       <div class="product-card__order order">
                         <p class="order__price">225₽</p>
-                        <button class="order__button button" type="button">В корзину</button>
+                        <button class="order__button button" type="button">
+                          <svg class="order__button-icon" width="20" height="16">
+                            <use xlink:href="images/icons/stack.svg#basket+"></use>
+                          </svg>
+                          В корзину
+                        </button>
                       </div>
                     </div>
                     <a class="product-card__link product-card__link--photo" href="404.html">
-                      <img class="product-card__image" src="../raw/images/products/brown@1x.png" width="130" height="188" alt="">
+                      <picture>
+                        <source type="image/webp" srcset="images/products/brown@1x.webp 1x, images/products/brown@2x.webp 2x">
+                        <img class="product-card__image" src="images/products/brown@1x.png" srcset="images/products/brown@2x.png 2x" width="130" height="188" alt="">
+                      </picture>
                     </a>
                   </li>
                   <li class="products-list__item product-card">
@@ -310,20 +400,33 @@
                       <a class="product-card__link" href="404.html">
                         <h4 class="product-card__title">Декаф Флэт Уайт</h4>
                       </a>
-                      <p class="product-card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+                      <p class="product-card__description">Кофе без кофеина из Эфиопии с&nbsp;натуральным фермерским молоком</p>
                       <div class="product-card__order order">
                         <p class="order__price">225₽</p>
-                        <button class="order__button button" type="button">В корзину</button>
+                        <button class="order__button button" type="button">
+                          <svg class="order__button-icon" width="20" height="16">
+                            <use xlink:href="images/icons/stack.svg#basket+"></use>
+                          </svg>
+                          В корзину
+                        </button>
                       </div>
                     </div>
                     <a class="product-card__link product-card__link--photo" href="404.html">
-                      <img class="product-card__image" src="../raw/images/products/yellow@1x.png" width="130" height="188" alt="">
+                      <picture>
+                        <source type="image/webp" srcset="images/products/yellow@1x.webp 1x, images/products/yellow@2x.webp 2x">
+                        <img class="product-card__image" src="images/products/yellow@1x.png" srcset="images/products/yellow@2x.png 2x" width="130" height="188" alt="">
+                      </picture>
                     </a>
                   </li>
                 </ul>
                 <ul class="catalog__pagination pagination">
                   <li class="pagination__item pagination__item--prev">
-                    <a class="pagination__link" href="#"><span class="pagination__link-text">Назад</span></a>
+                    <a class="pagination__link" href="#">
+                      <svg class="pagination__link-icon" width="6" height="10">
+                        <use xlink:href="images/icons/stack.svg#leftarrow"></use>
+                      </svg>
+                      <span class="pagination__link-text">Назад</span>
+                    </a>
                   </li>
                   <li class="pagination__item">
                     <a class="pagination__link" href="#">1</a>
@@ -335,7 +438,12 @@
                     <a class="pagination__link" href="#">3</a>
                   </li>
                   <li class="pagination__item pagination__item--next" >
-                    <a class="pagination__link" href="#"><span class="pagination__link-text">Вперёд</span></a>
+                    <a class="pagination__link" href="#">
+                      <span class="pagination__link-text">Вперёд</span>
+                      <svg class="pagination__link-icon" width="6" height="10">
+                        <use xlink:href="images/icons/stack.svg#leftarrow"></use>
+                      </svg>
+                    </a>
                   </li>
                 </ul>
               </section>
@@ -351,22 +459,32 @@
       <div class="page-footer__wrapper">
         <div class="page-footer__base">
           <a class="page-footer__logo" href="#">
-            <img class="page-footer__logo-image" src="../raw/images/logo/logo-short.svg" width="82" height="36" alt="Логотип Drink2Go">
+            <picture>
+              <source media="(min-width: 1440px)" srcset="images/logo/logo-full.svg">
+              <img class="page-footer__logo-image" src="images/logo/logo-short.svg" width="82" height="36" alt="Логотип Drink2Go">
+            </picture>
+            <span class="page-footer__logo-text">Интернет-магазин кофейных напитков</span>
           </a>
           <ul class="page-footer__socials socials-list">
             <li class="socials-list__item">
-              <a class="socials-list__link">
-                <img class="socials-list__link-icon" src="../raw/images/icons/socials/vk.svg" width="20" height="20" alt="ВКонтакте">
+              <a class="socials-list__link" href="#">
+                <svg class="socials-list__link-icon" width="20" height="20">
+                  <use xlink:href="images/icons/stack.svg#socials_vk"></use>
+                </svg>
               </a>
             </li>
             <li class="socials-list__item">
-              <a class="socials-list__link">
-                <img class="socials-list__link-icon" src="../raw/images/icons/socials/pinterest.svg" width="22" height="22" alt="Pinterest">
+              <a class="socials-list__link" href="#">
+                <svg class="socials-list__link-icon" width="22" height="22">
+                  <use xlink:href="images/icons/stack.svg#socials_pinterest"></use>
+                </svg>
               </a>
             </li>
             <li class="socials-list__item">
-              <a class="socials-list__link">
-                <img class="socials-list__link-icon" src="../raw/images/icons/socials/classmates.svg" width="20" height="20" alt="Одноклассники">
+              <a class="socials-list__link" href="#">
+                <svg class="socials-list__link-icon" width="20" height="20">
+                  <use xlink:href="images/icons/stack.svg#socials_classmates"></use>
+                </svg>
               </a>
             </li>
           </ul>
@@ -413,9 +531,15 @@
               <address class="menu__item-content contacts">
                 <ul class="contacts__list">
                   <li class="contacts__item">
-                    <p class="contacts__address">Санкт-Петербург, набережная реки Карповки, дом 5</p>
+                    <svg class="contacts__icon" width="13" height="16">
+                      <use xlink:href="images/icons/stack.svg#address"></use>
+                    </svg>
+                    <p class="contacts__address">Санкт-Петербург, набережная реки Карповки,&nbsp;дом 5</p>
                   </li>
                   <li class="contacts__item">
+                    <svg class="contacts__icon" width="13" height="16">
+                      <use xlink:href="images/icons/stack.svg#phone"></use>
+                    </svg>
                     <a class="contacts__link contacts__link--tel" href="tel:+79999999999">+7 (999) 999-99-99</a>
                   </li>
                 </ul>
@@ -426,7 +550,9 @@
         <p class="page-footer__copyright copyright">
           <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
             Разработано в HTML Academy
-            <img class="copyright__logo" src="../raw/images/icons/copyright/htmlacademy.svg" width="12" height="16" alt="HTML Academy">
+            <svg class="copyright__logo" width="12" height="16">
+              <use xlink:href="images/icons/stack.svg#copyright_htmlacademy"></use>
+            </svg>
           </a>
         </p>
       </div>
@@ -437,9 +563,9 @@
         <p class="balloon__lat-lng">Координаты: 59.968356, 30.317568</p>
       </section>
     </template>
-    <script src="vendor/leaflet/leaflet.js"></script>
-    <script src="vendor/noUiSlider-15.7.1/nouislider.min.js"></script>
     <script src="vendor/swiper-11.0.5/swiper-bundle.min.js"></script>
+    <script src="vendor/noUiSlider-15.7.1/nouislider.min.js"></script>
+    <script src="vendor/leaflet/leaflet.js"></script>
     <script src="scripts/index.js" defer></script>
   </body>
 </html>

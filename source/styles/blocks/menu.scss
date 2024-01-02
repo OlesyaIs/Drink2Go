@@ -34,6 +34,16 @@
   color: $color-black;
 }
 
+.sub-menu__link {
+  &:hover, &:focus-visible {
+    color: $color-primary-light;
+  }
+
+  &:active {
+    color: $color-primary-dark;
+  }
+}
+
 @media (max-width: $mobile-width-only) {
   .menu__item {
     &::before {

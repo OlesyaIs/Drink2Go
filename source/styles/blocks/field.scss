@@ -23,14 +23,31 @@
   border: 2px solid $color-primary-light;
   background-color: $color-white;
 
-  &[type=radio], &[type=checkbox] {
-    display: none;
+  &:hover, &:focus-visible {
+    border-color: $color-primary-dark;
+  }
+
+  &:active {
+    border-color: $color-black;
   }
 
   &:disabled {
+    color: $color-gray;
     border-color: $color-gray;
-    opacity: 0.5;
+    background-color: $color-gray-lightest;
   }
+
+  &::placeholder {
+    color: $color-gray;
+  }
+
+  &[type=radio], &[type=checkbox] {
+    display: none;
+  }
+}
+
+.field__title {
+  cursor: pointer;
 }
 
 .field__input[type=radio] + .field__title {
@@ -51,12 +68,6 @@
     border: 2px solid $color-gray;
     background-color: transparent;
   }
-}
-
-.field__input[type=radio]:checked + .field__title {
-  &::before {
-    border-color: $color-primary;
-  }
 
   &::after {
     content: "";
@@ -66,7 +77,51 @@
     top: 4px;
     left: 4px;
     border-radius: 50%;
+    background-color: transparent;
+  }
+}
+
+.field__input[type=radio]:hover + .field__title,
+.field__input[type=radio]:focus-visible + .field__title {
+  &::before {
+    border-color: $color-primary-light;
+  }
+
+  &::after {
+    background-color: $color-primary-025;
+  }
+}
+
+.field__input[type=radio]:disabled + .field__title {
+  color: $color-gray;
+  cursor: default;
+
+  &::before {
+    border-color: $color-gray-light;
+  }
+
+  &::after {
+    background-color: transparent;
+  }
+}
+
+.field__input[type=radio]:checked + .field__title {
+  &::before {
+    border-color: $color-primary;
+  }
+
+  &::after {
     background-color: $color-primary;
+  }
+}
+
+.field__input[type=radio]:checked:disabled + .field__title {
+  &::before {
+    border-color: $color-gray-light;
+  }
+
+  &::after {
+    background-color: $color-gray-light;
   }
 }
 
@@ -85,6 +140,7 @@
     align-self: flex-start;
     flex-shrink: 0;
     border-radius: 12px;
+    border: 2px solid $color-gray;
     background-color: $color-gray;
   }
 
@@ -100,8 +156,27 @@
   }
 }
 
+.field__input[type=checkbox]:hover + .field__title,
+.field__input[type=checkbox]:focus-visible + .field__title {
+  &::before {
+    border-color: $color-primary-light;
+    background-color: $color-primary-025;
+  }
+}
+
+.field__input[type=checkbox]:disabled + .field__title {
+  color: $color-gray;
+  cursor: default;
+
+  &::before {
+    border-color: $color-gray-light;
+    background-color: $color-gray-light;
+  }
+}
+
 .field__input[type=checkbox]:checked + .field__title {
   &::before {
+    border-color: $color-primary;
     background-color: $color-primary;
   }
 
@@ -110,3 +185,13 @@
   }
 }
 
+.field__input[type=checkbox]:checked:disabled + .field__title {
+  &::before {
+    border-color: $color-gray-light;
+    background-color: $color-gray-light;
+  }
+
+  &::after {
+    background-color: $color-gray;
+  }
+}

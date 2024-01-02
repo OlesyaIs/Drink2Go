@@ -15,7 +15,5 @@
 }
 
 .page-header__wrapper {
-  margin: 0 auto;
-  min-width: $mobile-width;
-  max-width: $desktop-width;
+  @include page-center;
 }

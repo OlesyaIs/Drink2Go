@@ -18,7 +18,8 @@ $color-secondary: #f0ebff;
 //alt colors
 $color-primary-light: #9070ec;
 $color-primary-dark: #593cac;
-$color-primary-025: rgba (120, 89, 207, 0.25);
+$color-primary-025: rgba(120, 89, 207, 0.25);
+$color-true-black-015: rgba(0, 0, 0, 0.15);
 
 
 // background colors
@@ -26,6 +27,7 @@ $bg-color: $color-gray-lightest;
 $bg-color-flat: #f3ebe1;
 $bg-color-lavender: #eae6fc;
 $bg-color-espresso: #e5e6e8;
+$bg-map: #e0e5da;
 
 // side paddings
 $page-indent: 20px;

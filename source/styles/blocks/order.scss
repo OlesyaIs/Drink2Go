@@ -22,11 +22,8 @@
   align-items: center;
   font-size: $font-size-button-default;
   line-height: $line-height-button-default;
+}
 
-  &::before {
-    content: "";
-    width: 20px;
-    height: 16px;
-    background: url("../../../raw/images/icons/basket.svg")
-  }
+.order__button-icon {
+  fill: currentColor;
 }
