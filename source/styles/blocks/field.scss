@@ -1,9 +1,11 @@
 .field {
   display: flex;
   align-items: center;
-  &--price {
-    flex-grow: 1;
-    flex-shrink: 1;
+}
+
+.field--price {
+  .field__input {
+    width: 100%;
   }
 }
 
@@ -20,14 +22,37 @@
   border-radius: 4px;
   border: 2px solid $color-primary-light;
   background-color: $color-white;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+
+  &:hover, &:focus-visible {
+    border-color: $color-primary-dark;
+  }
+
+  &:active {
+    border-color: $color-black;
+  }
+
+  &:disabled {
+    color: $color-gray;
+    border-color: $color-gray;
+    background-color: $color-gray-lightest;
+  }
+
+  &::placeholder {
+    color: $color-gray;
+  }
 
   &[type=radio], &[type=checkbox] {
     display: none;
   }
+}
 
-  &:disabled {
-    border-color: $color-gray;
-    opacity: 0.5;
+.field__title {
+  font-size: $font-size-legend;
+  cursor: pointer;
+
+  &::before, &::after {
+    transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
   }
 }
 
@@ -49,12 +74,6 @@
     border: 2px solid $color-gray;
     background-color: transparent;
   }
-}
-
-.field__input[type=radio]:checked + .field__title {
-  &::before {
-    border-color: $color-primary;
-  }
 
   &::after {
     content: "";
@@ -64,7 +83,54 @@
     top: 4px;
     left: 4px;
     border-radius: 50%;
+    background-color: transparent;
+  }
+}
+
+.field__input[type=radio]:hover + .field__title,
+.field__input[type=radio]:focus-visible + .field__title {
+  &::before {
+    border-color: $color-primary-light;
+  }
+
+  &::after {
+    background-color: $color-primary-025;
+  }
+}
+
+.field__input[type=radio]:disabled + .field__title {
+  color: $color-gray;
+  cursor: default;
+
+  &::before {
+    border-color: $color-gray-light;
+  }
+
+  &::after {
+    background-color: transparent;
+  }
+}
+
+/*Радиокнопки переключаются путём выбора другой радиокнопки из группы =>
+при наведении на уже отмеченную радиокнопку визуально она не выделяется*/
+
+.field__input[type=radio]:checked + .field__title {
+  &::before {
+    border-color: $color-primary;
+  }
+
+  &::after {
     background-color: $color-primary;
+  }
+}
+
+.field__input[type=radio]:checked:disabled + .field__title {
+  &::before {
+    border-color: $color-gray-light;
+  }
+
+  &::after {
+    background-color: $color-gray-light;
   }
 }
 
@@ -83,6 +149,7 @@
     align-self: flex-start;
     flex-shrink: 0;
     border-radius: 12px;
+    border: 2px solid $color-gray;
     background-color: $color-gray;
   }
 
@@ -95,11 +162,16 @@
     left: 2px;
     border-radius: 50%;
     background-color: $color-white;
+    transition: left 0.2s ease-out;
   }
 }
 
+/*Отметить чекбокс или отменить выбор можно по щелчку на чекбокс =>
+при наведении он будет визуально выделяться независимо от того, был он отмечен или нет*/
+
 .field__input[type=checkbox]:checked + .field__title {
   &::before {
+    border-color: $color-primary;
     background-color: $color-primary;
   }
 
@@ -108,3 +180,31 @@
   }
 }
 
+.field__input[type=checkbox]:hover + .field__title,
+.field__input[type=checkbox]:focus-visible + .field__title {
+  &::before {
+    border-color: $color-primary-light;
+    background-color: $color-primary-025;
+  }
+}
+
+.field__input[type=checkbox]:disabled + .field__title {
+  color: $color-gray;
+  cursor: default;
+
+  &::before {
+    border-color: $color-gray-light;
+    background-color: $color-gray-light;
+  }
+}
+
+.field__input[type=checkbox]:checked:disabled + .field__title {
+  &::before {
+    border-color: $color-gray-light;
+    background-color: $color-gray-light;
+  }
+
+  &::after {
+    background-color: $color-gray;
+  }
+}

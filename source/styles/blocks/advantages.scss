@@ -5,6 +5,7 @@
 
 .advantages__wrapper {
   @include side-paddings;
+  @include page-center;
   padding-top: 50px;
   padding-bottom: 60px;
   display: flex;
@@ -15,10 +16,38 @@
 .advantages__list {
   @include clear-indents;
   display: grid;
+  grid-template-columns: 1fr;
   justify-content: center;
-  justify-items: start;
-  align-items: center;
+  justify-items: stretch;
+  align-items: stretch;
   row-gap: 32px;
   column-gap: 30px;
   list-style: none;
+}
+
+@media (min-width: $tablet-width) {
+  .advantages__wrapper {
+    padding-top: 60px;
+    padding-bottom: 100px;
+    row-gap: 60px;
+  }
+
+  .advantages__list {
+    padding: 0 10px;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 50px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .advantages__wrapper {
+    padding-top: 100px;
+    padding-bottom: 120px;
+    row-gap: 80px;
+  }
+
+  .advantages__list {
+    padding: 0;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

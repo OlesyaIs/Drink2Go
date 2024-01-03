@@ -1,10 +1,26 @@
 .user-list {
   @include clear-indents;
   display: flex;
+  letter-spacing: 0.24px;
   list-style: none;
 }
 
-.user-list__item-link {
-  color: inherit;
-  text-decoration: none;
+.user-list__item {
+  display: flex;
+}
+
+.user-list__icon {
+  fill: currentColor;
+}
+
+@media (max-width: $tablet-width-max) {
+  .user-list__text {
+    @include visually-hidden;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .user-list {
+    column-gap: 20px;
+  }
 }

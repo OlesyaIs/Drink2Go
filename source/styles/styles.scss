@@ -5,7 +5,9 @@
 
 /* MIXINS */
 @import "./global/mixins/clear-indents.scss";
+@import "./global/mixins/page-center.scss";
 @import "./global/mixins/side-paddings.scss";
+@import "./global/mixins/visually-hidden.scss";
 
 /* BLOCKS */
 @import "./blocks/page.scss";
@@ -29,10 +31,7 @@
 @import "./blocks/product-card.scss";
 @import "./blocks/contacts.scss";
 @import "./blocks/socials-list.scss";
-@import "./blocks/menu.scss";
-@import "./blocks/sub-menu.scss";
 @import "./blocks/pagination.scss";
-@import "./blocks/order.scss";
 @import "./blocks/full-price.scss";
 @import "./blocks/sort.scss";
 @import "./blocks/slogan.scss";

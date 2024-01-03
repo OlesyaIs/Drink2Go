@@ -8,12 +8,12 @@
   color: $color-black;
   background-color: $color-white;
   z-index: 2;
+
+  @media (min-width: $tablet-width) {
+    min-height: $header-height-tablet;
+  }
 }
 
 .page-header__wrapper {
-  margin: 0 auto;
-  min-width: $mobile-width;
-  max-width: $desktop-width;
+  @include page-center;
 }
-
-

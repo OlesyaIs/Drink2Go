@@ -1,22 +1,32 @@
 .sort {
   @include clear-indents;
-  display: flex;
-  justify-content: flex-end;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: min-content 1fr;
   align-items: center;
   column-gap: 8px;
+  line-height: 24px;
 }
 
 .sort__label {
   @include clear-indents;
   font-size: $font-size-legend;
-  line-height: 24px;
   font-weight: 600;
 }
 
+.sort__select-wrapper {
+  display: flex;
+}
+
 .sort__select {
-  @include clear-indents;
-  padding: 4px 10px;
   font-family: $font-family-default;
-  border: none;
-  background-color: transparent;
+  font-weight: 500;
+  color: $color-primary;
+  cursor: pointer;
+}
+
+@media (min-width: $tablet-width) {
+  .sort {
+    column-gap: 20px;
+  }
 }

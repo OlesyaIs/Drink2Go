@@ -6,6 +6,14 @@
 }
 
 .socials-list__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.socials-list__link {
   padding: 9px;
   min-width: 40px;
   min-height: 40px;
@@ -13,10 +21,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: $color-gray;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out;
 }
 
-.socials-list__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.socials-list__link-icon {
+  fill: currentColor;
+}
+
+.socials-list__link:hover, .socials-list__link:focus {
+  color: $color-primary;
+  background-color: $color-secondary;
+}
+
+.socials-list__link:active {
+  color: $color-primary;
+  background-color: $color-primary-025;
 }

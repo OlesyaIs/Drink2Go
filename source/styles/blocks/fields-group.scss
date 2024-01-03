@@ -1,5 +1,10 @@
 .fields-group {
   @include clear-indents;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
   border: none;
 }
 
@@ -11,26 +16,15 @@
   font-weight: 600;
 }
 
-.fields-group {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-
-  &--range {
-    row-gap: 24px;
-  }
-}
-
 .fields-group__slider {
   @include clear-indents;
 }
 
 .fields-group--range .fields-group__inputs-wrapper {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(87px, 1fr) 8px minmax(87px, 1fr);
   align-items: center;
-  flex-wrap: wrap;
-  column-gap: 18px;
+  column-gap: 20px;
 }
 
 .fields-group__separator {
@@ -39,4 +33,33 @@
   height: 2px;
   background-color: $color-gray;
   border: none;
+}
+
+@media (max-width: $mobile-width-only) {
+  .fields-group {
+    &--range {
+      row-gap: 24px;
+    }
+
+    &--margin {
+      margin-bottom: 4px;
+    }
+  }
+
+  .fields-group--range .fields-group__inputs-wrapper {
+    column-gap: 18px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .fields-group {
+    &--range {
+      row-gap: 22px;
+    }
+
+  }
+
+  .fields-group--range .fields-group__inputs-wrapper {
+    grid-template-columns: minmax(87px, 1fr) 10px minmax(87px, 1fr);
+  }
 }

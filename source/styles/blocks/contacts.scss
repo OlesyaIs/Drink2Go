@@ -1,4 +1,6 @@
 .contacts {
+  font-size: $font-size-default;
+  line-height: 20px;
   font-style: normal;
 }
 
@@ -10,11 +12,33 @@
   list-style: none;
 }
 
-.contacts__item > * {
+.contacts__item {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.contacts__icon {
+  padding-top: 2px;
+  flex-shrink: 0;
+  fill: $color-primary;
+}
+
+.contacts__address {
   @include clear-indents;
 }
 
 .contacts__link {
+  @include clear-indents;
   color: inherit;
   text-decoration: none;
+  transition: color 0.2s ease-out;
+
+  &:hover, &:focus-visible {
+    color: $color-primary-light;
+  }
+
+  &:active {
+    color: $color-primary-dark;
+  }
 }

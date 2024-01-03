@@ -1,10 +1,11 @@
 .catalog {
   @include clear-indents;
-  @include side-paddings;
   background-color: $bg-color;
 }
 
 .catalog__wrapper {
+  @include side-paddings;
+  @include page-center;
   padding-top: 50px;
   padding-bottom: 44px;
   display: flex;
@@ -14,7 +15,9 @@
 
 .catalog__subsections-wrapper {
   display: grid;
-  row-gap: 36px;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 30px;
 }
 
 .catalog__filters {
@@ -25,10 +28,57 @@
   @include clear-indents;
   display: flex;
   flex-direction: column;
-  row-gap: 16px;
+  row-gap: 20px;
+}
+
+.catalog__sort {
+  align-self: flex-end;
 }
 
 .catalog__pagination {
   @include clear-indents;
-  margin-top: 24px;
+  margin-top: 20px;
+  align-self: flex-end;
+}
+
+@media (max-width: $mobile-width-only) {
+  .catalog__filters {
+    position: relative;
+    left: 3px;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .catalog__wrapper {
+    padding-top: 80px;
+    padding-bottom: 90px;
+  }
+
+  .catalog__subsections-wrapper {
+    row-gap: 44px;
+  }
+
+  .catalog__products {
+    row-gap: 30px;
+  }
+
+  .catalog__pagination {
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .catalog__wrapper {
+    padding-top: 100px;
+    padding-bottom: 120px;
+    row-gap: 40px;
+  }
+
+  .catalog__subsections-wrapper {
+    grid-template-columns: 318px 1011px;
+  }
+
+  .catalog__pagination {
+    margin-top: 30px;
+  }
 }

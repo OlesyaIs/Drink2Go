@@ -1,0 +1,6 @@
+@mixin page-center {
+  margin: 0 auto;
+  min-width: $mobile-width;
+  max-width: $desktop-width;
+  box-sizing: border-box;
+}
