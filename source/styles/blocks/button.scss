@@ -12,6 +12,7 @@
   border: none;
   background-color: $color-primary;
   cursor: pointer;
+  transition: background-color 0.2s ease-out;
 
   &:hover, &:focus {
     background-color: $color-primary-light;

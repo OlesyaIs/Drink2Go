@@ -6,7 +6,7 @@
   text-transform: uppercase;
 }
 
-.main-nav__logo {
+.main-nav__logo-wrapper {
   margin: 12px auto 12px 0;
   display: flex;
   justify-content: center;
@@ -17,10 +17,13 @@
   text-decoration: none;
 }
 
+.main-nav__logo {
+  display: flex;
+}
+
 .main-nav__logo-image {
   width: 32px;
   height: 36px;
-  display: block;
   object-fit: contain;
 }
 
@@ -44,53 +47,47 @@
     flex-wrap: wrap;
   }
 
-  .main-nav--close {
-    .site-list {
-      display: none;
-    }
-
-    .main-nav__menu-toggle-icon {
-      &--open {
-        display: block;
-      }
-
-      &--close {
-        display: none;
-      }
-    }
+  .main-nav--close .site-list {
+    display: none;
   }
 
-  .main-nav--open {
-    .site-list {
-      display: flex;
+  .main-nav--close .main-nav__menu-toggle-icon {
+    &--open {
+      display: block;
     }
 
-    .main-nav__menu-toggle-icon {
-      &--open {
-        display: none;
-      }
-
-      &--close {
-        display: block;
-      }
-    }
-  }
-
-  .main-nav--nojs {
-    .site-list {
-      width: 100%;
-      display: flex;
-      position: relative;
-      top: 0;
-      order: 1;
-    }
-
-    .main-nav__menu-toggle {
+    &--close {
       display: none;
     }
   }
 
-  .main-nav__logo {
+  .main-nav--open .site-list {
+    display: flex;
+  }
+
+  .main-nav--open .main-nav__menu-toggle-icon {
+    &--open {
+      display: none;
+    }
+
+    &--close {
+      display: block;
+    }
+  }
+
+  .main-nav--nojs .site-list {
+    width: 100%;
+    display: flex;
+    position: relative;
+    top: 0;
+    order: 1;
+  }
+
+  .main-nav--nojs .main-nav__menu-toggle {
+    display: none;
+  }
+
+  .main-nav__logo-wrapper {
     margin-left: $page-indent;
   }
 }
@@ -105,7 +102,7 @@
     }
   }
 
-  .main-nav__logo {
+  .main-nav__logo-wrapper {
     margin-top: 22px;
     margin-bottom: 22px;
   }
@@ -122,8 +119,14 @@
 }
 
 @media (min-width: $desktop-width) {
-  .main-nav__logo {
+  .main-nav__logo-wrapper {
     margin-right: 0;
+    transition: color 0.2s ease-out, opacity 0.2s ease-out;
+
+    &:hover, &:focus {
+      color: $color-primary;
+      opacity: 0.8;
+    }
   }
 
   .main-nav__logo-image {

@@ -1,7 +1,7 @@
 /* здесь используйте глобальные переменные */
 //
-$mobile-width-only: 767px;
 $mobile-width: 320px;
+$mobile-width-only: 767px;
 $tablet-width: 768px;
 $tablet-width-max: 1439px;
 $desktop-width: 1440px;
@@ -16,9 +16,11 @@ $color-primary: #7859cf;
 $color-secondary: #f0ebff;
 
 //alt colors
+$color-true-black: rgba(255, 255, 255, 0.00);
 $color-primary-light: #9070ec;
 $color-primary-dark: #593cac;
 $color-primary-025: rgba(120, 89, 207, 0.25);
+$color-primary-0: rgba(120, 89, 207, 0.00);
 $color-true-black-015: rgba(0, 0, 0, 0.15);
 
 
@@ -53,11 +55,8 @@ $font-size-h3: 18px;
 $font-size-h3-tablet: 24px;
 $font-size-legend: $font-size-bigger;
 $font-size-input: $font-size-bigger;
-$font-size-button-default: $font-size-bigger;
 $font-size-menu: $font-size-default;
 
 $font-size-price-old: $font-size-bigger;
 $font-size-price: $font-size-big;
 $line-height-price: 32px;
-
-$line-height-button-default: 24px;

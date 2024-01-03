@@ -10,6 +10,7 @@
   border-radius: 4px;
   background-color: $color-white;
   overflow: hidden;
+  transition: box-shadow 0.3s ease-out;
 }
 
 .product-card__wrapper {
@@ -24,6 +25,11 @@
   text-decoration: none;
 
   &--photo {
+    width: 130px;
+    height: 188px;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
     order: -1;
   }
 }
@@ -37,12 +43,35 @@
 .product-card__description {
   @include clear-indents;
   margin-bottom: 12px;
+  line-height: 20px;
 }
 
 .product-card__order {
   @include clear-indents;
   margin-top: auto;
   justify-content: space-between;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.prodact-card__price {
+  @include clear-indents;
+  position: relative;
+  left: -2px;
+  font-size: $font-size-price;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+.prodact-card__order-button {
+  align-self: flex-start;
+  font-size: $font-size-default;
+  line-height: 20px;
+}
+
+.prodact-card__button-icon {
+  fill: currentColor;
 }
 
 @media (min-width: $tablet-width) {

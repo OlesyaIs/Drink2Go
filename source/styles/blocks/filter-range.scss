@@ -1,6 +1,7 @@
 .filter-range {
   padding: 10px 12px;
   height: 24px;
+  position: relative;
   background-color: transparent;
   border: none;
   box-shadow: none;
@@ -20,6 +21,10 @@
 
   &:disabled {
     cursor: default;
+  }
+
+  &--nojs {
+    display: none;
   }
 }
 
@@ -42,6 +47,7 @@
   border-radius: 50%;
   background-color: $color-white;
   cursor: pointer;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
 
   &::before {
     margin: auto;
@@ -53,8 +59,9 @@
     right: 0;
     bottom: 0;
     left: 0;
-    display: none;
     border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.2s ease-out;
   }
 
   &::after {
@@ -63,15 +70,15 @@
 
   &:hover, &:focus-visible {
     &::before {
-      display: block;
       background-color: $color-primary-025;
     }
   }
 
   &:active {
+    border-color: $color-primary;
+
     &::before {
-      display: block;
-      background-color: $color-primary-light;
+      background-color: $color-primary;
     }
   }
 }

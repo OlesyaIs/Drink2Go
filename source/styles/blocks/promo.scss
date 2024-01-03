@@ -15,9 +15,10 @@
   margin: 0;
   padding: 0;
   width: auto;
-  height: 100%;
+  height: auto;
   box-sizing: border-box;
   top: 0;
+  bottom: 0;
   color: $color-primary;
   border: none;
   background-color: transparent;
@@ -49,16 +50,16 @@
   }
 }
 
-
 .promo__slider-button--next {
   .promo__slider-button-icon {
     transform: rotate(180deg);
   }
 }
 
-.promo__toggles {
+.promo__slider .promo__toggles {
   display: none;
-  margin-bottom: 44px;
+  height: 24px;
+  bottom: 60px;
 }
 
 .promo__toggles > .swiper-pagination-bullet {
@@ -69,6 +70,7 @@
   background-color: $color-white;
   background-clip: content-box;
   opacity: 1;
+  transition: background-color 0.2s ease-out;
 
   &:hover, &:focus-visible {
     background-color: $color-primary-025;
@@ -84,33 +86,46 @@
 }
 
 @media (min-width: $tablet-width) {
+  .promo__slider {
+    padding-bottom: 188px;
+  }
+
   .promo__slider-button {
+    margin-bottom: 188px;
     padding: 0 30px;
 
     &--prev {
       &:hover, &:focus-visible {
-        background: linear-gradient(90deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+        background: linear-gradient(90deg, $color-white 0%, $color-true-black 100%);
       }
 
       &:active {
-        background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0.00) 100%);
+        background: linear-gradient(90deg, $color-primary-025 0%, $color-primary-0 100%);
       }
     }
 
     &--next {
       &:hover, &:focus-visible {
-        background: linear-gradient(-90deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+        background: linear-gradient(-90deg, $color-white 0%, $color-true-black 100%);
       }
 
       &:active {
-        background: linear-gradient(-90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0.00) 100%);
+        background: linear-gradient(-90deg, $color-primary-025 0%, $color-primary-0 100%);
       }
     }
   }
 }
 
 @media (min-width: $desktop-width) {
-  .promo__toggles {
+  .promo__slider {
+    padding-bottom: 0;
+  }
+
+  .promo__slider-button {
+    margin-bottom: 0;
+  }
+
+  .promo__slider .promo__toggles {
     display: block;
   }
 }

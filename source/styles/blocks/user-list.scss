@@ -1,6 +1,7 @@
 .user-list {
   @include clear-indents;
   display: flex;
+  letter-spacing: 0.24px;
   list-style: none;
 }
 

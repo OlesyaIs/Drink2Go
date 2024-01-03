@@ -10,6 +10,7 @@
 .section-header__tag {
   @include clear-indents;
   font-size: $font-size-smaller;
+  line-height: 16px;
 }
 
 .section-header__title {

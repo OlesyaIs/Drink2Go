@@ -5,13 +5,16 @@
 // Page scripts
 const mainNav = document.querySelector('.main-nav');
 const menuToggle = mainNav.querySelector('.main-nav__menu-toggle');
+const filterRange = document.querySelector('.filter-range');
+
 const onToggleClick = () => {
   mainNav.classList.toggle('main-nav--close');
   mainNav.classList.toggle('main-nav--open');
 };
+
 mainNav.classList.remove('main-nav--nojs');
 menuToggle.addEventListener('click', onToggleClick);
-
+filterRange.classList.remove('filter-range--nojs');
 
 // Map
 const pinTarget = {
@@ -22,8 +25,8 @@ const pinTarget = {
 
 const map = L.map('map')
   .setView({
-    lat: 59.968356,
-    lng: 30.317568,
+    lat: 59.96842076480187,
+    lng: 30.31748522083676,
   }, 100);
 
 L.tileLayer(
@@ -70,13 +73,18 @@ marker
 
 // Range
 const range = document.querySelector('#filter-range');
+const inputMinNumber = document.querySelector('#min-price');
+const inputMaxNumber = document.querySelector('#max-price');
+const resetButton = document.querySelector('.form__button[type=reset]');
+const inputs = [inputMinNumber, inputMaxNumber];
 
 noUiSlider.create(range, {
   range: {
     'min': 0,
-    'max': 1000,
+    'max': 970,
   },
-  start: [0, 900],
+  start: [(inputMinNumber.value ? inputMinNumber.value : 0), inputMaxNumber.value],
+  margin: 50,
   step: 1,
   behaviour: 'snap',
   tooltips: false,
@@ -91,18 +99,18 @@ noUiSlider.create(range, {
   },
 });
 
-const inputMinNumber = document.querySelector('#min-price');
-const inputMaxNumber = document.querySelector('#max-price');
-const inputs = [inputMinNumber, inputMaxNumber];
 range.noUiSlider.on('update', (values, handle) => {
   inputs[handle].value = values[handle];
 });
-
 
 inputs.forEach((input, handle) => {
   input.addEventListener('change', () => {
     range.noUiSlider.setHandle(handle, input.value);
   });
+});
+
+resetButton.addEventListener('click', () => {
+  range.noUiSlider.reset();
 });
 
 // Swiper

@@ -16,9 +16,10 @@
 .advantages__list {
   @include clear-indents;
   display: grid;
+  grid-template-columns: 1fr;
   justify-content: center;
-  justify-items: start;
-  align-items: center;
+  justify-items: stretch;
+  align-items: stretch;
   row-gap: 32px;
   column-gap: 30px;
   list-style: none;
@@ -40,12 +41,13 @@
 
 @media (min-width: $desktop-width) {
   .advantages__wrapper {
-    padding-top: 120px;
+    padding-top: 100px;
     padding-bottom: 120px;
     row-gap: 80px;
   }
 
   .advantages__list {
+    padding: 0;
     grid-template-columns: repeat(4, 1fr);
   }
 }

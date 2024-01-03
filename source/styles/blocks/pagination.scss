@@ -27,6 +27,7 @@
   text-decoration: none;
   background-color: $color-white;
   cursor: pointer;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
 
   &:hover, &:focus-visible {
     color: $color-white;
@@ -52,6 +53,7 @@
 }
 
 .pagination__link-icon {
+  padding: 0 3px 0 1px;
   display: none;
   fill: currentColor;
 }

@@ -1,5 +1,5 @@
 .advantage {
-  padding-top: 56px;
+  padding-top: 66px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -17,29 +17,30 @@
     position: absolute;
     top: 0;
     background-repeat: no-repeat;
+    background-size: contain;
   }
 
   &--speed {
     &::before {
-      background-image: url("../../images/advantages/speed.svg");
+      background-image: url("../../images/icons/stack.svg#advantages_speed");
     }
   }
 
   &--fit {
     &::before {
-      background-image: url("../../images/advantages/fit.svg");
+      background-image: url("../../images/icons/stack.svg#advantages_fit");
     }
   }
 
   &--energy {
     &::before {
-      background-image: url("../../images/advantages/energy.svg");
+      background-image: url("../../images/icons/stack.svg#advantages_energy");
     }
   }
 
   &--eco {
     &::before {
-      background-image: url("../../images/advantages/ecology.svg");
+      background-image: url("../../images/icons/stack.svg#advantages_ecology");
     }
   }
 }
@@ -68,6 +69,18 @@
       top: 0;
       left: 0;
     }
+
+    &--speed {
+      &::before {
+        top: 4px;
+      }
+    }
+
+    &--eco {
+      &::before {
+        top: 4px;
+      }
+    }
   }
 
   .advantage__title {
@@ -91,6 +104,18 @@
     &::before {
       left: 0;
       right: 0;
+    }
+
+    &--speed {
+      &::before {
+        top: 0px;
+      }
+    }
+
+    &--eco {
+      &::before {
+        top: 0px;
+      }
     }
   }
 }

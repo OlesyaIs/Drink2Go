@@ -17,8 +17,9 @@
 }
 
 .form__button {
-  font-size: $font-size-button-default;
-  line-height: $line-height-button-default;
+  flex-grow: 1;
+  font-size: $font-size-bigger;
+  line-height: 24px;
 }
 
 @media (min-width: $tablet-width) {
@@ -37,7 +38,16 @@
 }
 
 @media (min-width: $desktop-width) {
+  .form {
+    align-items: stretch;
+  }
+
   .form__fieldsets-wrapper {
     grid-template-columns: 1fr;
+  }
+
+  .form__buttons-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

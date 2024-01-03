@@ -3,6 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+  letter-spacing: 0.24px;
   list-style: none;
 }
 
@@ -31,6 +32,8 @@
   }
 
   .site-list__item--current {
+    color: $color-primary;
+
     &::after {
       content: "";
       width: 100%;

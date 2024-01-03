@@ -15,21 +15,18 @@
 }
 
 .sort__select-wrapper {
-  padding: 4px 10px 4px 0;
-  width: 100%;
+  display: flex;
 }
 
-// .sort__select {
-//   @include clear-indents;
-//   width: 100%;
-//   font-family: $font-family-default;
-//   font-size: $font-size-bigger;
-//   line-height: 24px;
-//   font-weight: 600;
-//   text-align: end;
-//   color: $color-primary;
-//   border: none;
-//   background-color: transparent;
-//   text-wrap: wrap;
-//   overflow: visible;
-// }
+.sort__select {
+  font-family: $font-family-default;
+  font-weight: 500;
+  color: $color-primary;
+  cursor: pointer;
+}
+
+@media (min-width: $tablet-width) {
+  .sort {
+    column-gap: 20px;
+  }
+}
