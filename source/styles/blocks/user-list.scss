@@ -1,6 +1,7 @@
 .user-list {
   @include clear-indents;
   display: flex;
+  justify-content: flex-end;
   letter-spacing: 0.24px;
   list-style: none;
 }
@@ -9,13 +10,9 @@
   display: flex;
 }
 
-.user-list__icon {
-  fill: currentColor;
-}
-
-@media (max-width: $tablet-width-max) {
-  .user-list__text {
-    @include visually-hidden;
+@media (max-width: $mobile-width-only) {
+  .user-list {
+    flex-wrap: wrap;
   }
 }
 

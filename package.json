@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "^18.18 || ^20.9"
+    "node": "^20.9"
   },
   "browserslist": [
     "last 2 versions",
@@ -14,8 +14,9 @@
     "not < 0.2%"
   ],
   "scripts": {
-    "start": "gulp runDev",
+    "start": "gulp runProd",
     "build": "gulp buildProd",
+    "editorconfig": "editorconfig-cli --exclude vendor/* --exclude fonts/*",
     "preview": "npm run build && browser-sync start -s build/ --cors --no-notify --no-ui",
     "prelint": "gulp processMarkup --silent",
     "lint": "npm-run-all -pc lint:**",
@@ -27,7 +28,8 @@
     "lint:scripts": "eslint . --ignore-path .gitignore --ignore-pattern 'vendor/**'",
     "optimize": "npm-run-all -p optimize:**",
     "optimize:raster": "gulp optimizeRaster",
-    "optimize:vector": "gulp optimizeVector"
+    "optimize:vector": "gulp optimizeVector",
+    "stylelint": "npm run lint:styles"
   },
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "2.0.8",

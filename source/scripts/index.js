@@ -4,17 +4,89 @@
 
 // Page scripts
 const mainNav = document.querySelector('.main-nav');
-const menuToggle = mainNav.querySelector('.main-nav__menu-toggle');
+const menuToggle = mainNav.querySelector('.nav-button--toggle');
+const menuToggleText = menuToggle.querySelector('.nav-button__text');
 const filterRange = document.querySelector('.filter-range');
 
+const menuObserver = new MutationObserver(() => {
+  if (mainNav.classList.contains('main-nav--closed')) {
+    menuToggle.classList.add('nav-button--closed-toggle');
+    menuToggleText.textContent = 'Открыть меню';
+  } else {
+    menuToggle.classList.remove('nav-button--closed-toggle');
+    menuToggleText.textContent = 'Закрыть меню';
+  }
+});
+
+menuObserver.observe(mainNav, {
+  attributes: true,
+  characterDataOldValue: true
+});
+
 const onToggleClick = () => {
-  mainNav.classList.toggle('main-nav--close');
-  mainNav.classList.toggle('main-nav--open');
+  mainNav.classList.toggle('main-nav--closed');
+  mainNav.classList.toggle('main-nav--opened');
 };
 
 mainNav.classList.remove('main-nav--nojs');
 menuToggle.addEventListener('click', onToggleClick);
 filterRange.classList.remove('filter-range--nojs');
+
+// Swiper
+new Swiper('.swiper', {
+  slidesPerView: 1,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+
+
+// Range
+const range = document.querySelector('#filter-range');
+const inputMinNumber = document.querySelector('#min-price');
+const inputMaxNumber = document.querySelector('#max-price');
+const resetButton = document.querySelector('.form__button[type=reset]');
+const inputs = [inputMinNumber, inputMaxNumber];
+
+noUiSlider.create(range, {
+  range: {
+    'min': 0,
+    'max': 970,
+  },
+  start: [(inputMinNumber.value ? inputMinNumber.value : 0), inputMaxNumber.value],
+  margin: 50,
+  step: 1,
+  behaviour: 'snap',
+  tooltips: false,
+  connect: true,
+  format: {
+    to: function (value) {
+      return value.toFixed(0);
+    },
+    from: function (value) {
+      return parseFloat(value);
+    },
+  },
+});
+
+range.noUiSlider.on('update', (values, handle) => {
+  inputs[handle].value = values[handle];
+});
+
+inputs.forEach((input, handle) => {
+  input.addEventListener('change', () => {
+    range.noUiSlider.setHandle(handle, input.value);
+  });
+});
+
+resetButton.addEventListener('click', () => {
+  range.noUiSlider.reset();
+});
 
 // Map
 const pinTarget = {
@@ -70,58 +142,3 @@ marker
       keepInView: true,
     },
   );
-
-// Range
-const range = document.querySelector('#filter-range');
-const inputMinNumber = document.querySelector('#min-price');
-const inputMaxNumber = document.querySelector('#max-price');
-const resetButton = document.querySelector('.form__button[type=reset]');
-const inputs = [inputMinNumber, inputMaxNumber];
-
-noUiSlider.create(range, {
-  range: {
-    'min': 0,
-    'max': 970,
-  },
-  start: [(inputMinNumber.value ? inputMinNumber.value : 0), inputMaxNumber.value],
-  margin: 50,
-  step: 1,
-  behaviour: 'snap',
-  tooltips: false,
-  connect: true,
-  format: {
-    to: function (value) {
-      return value.toFixed(0);
-    },
-    from: function (value) {
-      return parseFloat(value);
-    },
-  },
-});
-
-range.noUiSlider.on('update', (values, handle) => {
-  inputs[handle].value = values[handle];
-});
-
-inputs.forEach((input, handle) => {
-  input.addEventListener('change', () => {
-    range.noUiSlider.setHandle(handle, input.value);
-  });
-});
-
-resetButton.addEventListener('click', () => {
-  range.noUiSlider.reset();
-});
-
-// Swiper
-new Swiper('.swiper', {
-  slidesPerView: 1,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-});

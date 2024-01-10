@@ -56,13 +56,12 @@
 
 .new-product-card__description {
   @include clear-indents;
-  margin-bottom: 16px;
   line-height: 20px;
 }
 
 .new-product-card__order {
   @include clear-indents;
-  margin-top: auto;
+  margin-top: 16px;
   display: flex;
   align-items: center;
   column-gap: 20px;
@@ -73,7 +72,7 @@
 }
 
 .new-product-card__order-button {
-  align-self: flex-start;
+  // align-self: flex-start;
   font-size: $font-size-bigger;
   line-height: 24px;
 }

@@ -8,7 +8,7 @@
   cursor: pointer;
 
   &::before {
-    content: '';
+    content: "";
     margin: auto;
     height: 2px;
     position: absolute;
@@ -68,7 +68,8 @@
     display: none;
   }
 
-  &:hover, &:focus-visible {
+  &:hover,
+  &:focus-visible {
     &::before {
       background-color: $color-primary-025;
     }

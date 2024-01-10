@@ -1,7 +1,7 @@
 .nav-button {
   padding: 20px;
   min-width: 60px;
-  min-height: 57px;
+  min-height: 60px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -16,13 +16,56 @@
   &:active {
     background-color: $color-secondary;
   }
+}
 
-  @media (min-width: $tablet-width) {
-    padding: 32px 20px;
+.nav-button__icon {
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.nav-button--toggle .nav-button__icon {
+  &--open {
+    display: none;
   }
 
-  @media (min-width: $desktop-width) {
-    &:hover, &:focus, &:active {
+  &--close {
+    display: block;
+  }
+}
+
+.nav-button--closed-toggle .nav-button__icon {
+  &--open {
+    display: block;
+  }
+
+  &--close {
+    display: none;
+  }
+}
+
+@media (max-width: $mobile-width-only) {
+  .nav-button--small {
+    min-height: 57px;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .nav-button {
+    padding: 32px 20px;
+  }
+}
+
+@media (max-width: $tablet-width-max) {
+  .nav-button__text {
+    @include visually-hidden;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .nav-button {
+    &:hover,
+    &:focus-visible,
+    &:active {
       color: $color-primary;
     }
   }

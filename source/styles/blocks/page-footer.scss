@@ -83,6 +83,7 @@
   row-gap: 4px;
   list-style: none;
 }
+
 .page-footer__item {
   display: flex;
 }
@@ -99,7 +100,8 @@
   color: $color-black;
   transition: color 0.2s ease-out;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus-visible {
     color: $color-primary-light;
   }
 
@@ -152,7 +154,7 @@
 
 @media (max-width: $tablet-width-max) {
   .page-footer__logo-text {
-    display: none;
+    @include visually-hidden;
   }
 }
 
@@ -173,15 +175,6 @@
 
     &--info {
       padding-top: 9px;
-    }
-  }
-
-  .page-footer__logo-wrapper {
-    transition: color 0.2s ease-out, opacity 0.2s ease-out;
-
-    &:hover, &:focus {
-      color: $color-primary;
-      opacity: 0.8;
     }
   }
 }

@@ -46,6 +46,15 @@
     position: relative;
     left: 3px;
   }
+
+  .catalog__products {
+    position: relative;
+  }
+
+  .catalog__sort {
+    position: relative;
+    right: -3px;
+  }
 }
 
 @media (min-width: $tablet-width) {

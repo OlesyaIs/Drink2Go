@@ -182,15 +182,9 @@ export function buildProd (done) {
   )(done);
 }
 
-export function runDev (done) {
+export function runProd (done) {
   series(
-    removeBuild,
-    parallel(
-      processMarkup,
-      processStyles,
-      processScripts,
-      createStack,
-    ),
+    buildProd,
     startServer,
   )(done);
 }

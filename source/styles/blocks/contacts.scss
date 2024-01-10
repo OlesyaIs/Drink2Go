@@ -34,7 +34,8 @@
   text-decoration: none;
   transition: color 0.2s ease-out;
 
-  &:hover, &:focus-visible {
+  &:hover,
+  &:focus-visible {
     color: $color-primary-light;
   }
 

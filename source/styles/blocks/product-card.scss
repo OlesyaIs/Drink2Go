@@ -49,13 +49,14 @@
 .product-card__order {
   @include clear-indents;
   margin-top: auto;
-  justify-content: space-between;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   column-gap: 20px;
 }
 
-.prodact-card__price {
+.product-card__price {
   @include clear-indents;
   position: relative;
   left: -2px;
@@ -64,13 +65,14 @@
   font-weight: 600;
 }
 
-.prodact-card__order-button {
+.product-card__order-button {
   align-self: flex-start;
   font-size: $font-size-default;
   line-height: 20px;
 }
 
-.prodact-card__button-icon {
+.product-card__button-icon {
+  flex-shrink: 0;
   fill: currentColor;
 }
 
@@ -99,8 +101,9 @@
   .product-card {
     min-height: 460px;
 
-    &:hover, &:focus-visible {
-      box-shadow: 0px 5px 15px 0px $color-true-black-015;
+    &:hover,
+    &:focus-visible {
+      box-shadow: 0 5px 15px 0 $color-true-black-015;
     }
   }
 }
