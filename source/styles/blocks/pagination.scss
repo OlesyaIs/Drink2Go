@@ -25,11 +25,13 @@
   font-weight: 400;
   color: $color-primary;
   text-decoration: none;
+  text-align: center;
   background-color: $color-white;
   cursor: pointer;
   transition: color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
 
-  &:hover, &:focus-visible {
+  &:hover,
+  &:focus-visible {
     color: $color-white;
     background-color: $color-primary-light;
   }

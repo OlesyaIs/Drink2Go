@@ -14,7 +14,8 @@
   cursor: pointer;
   transition: background-color 0.2s ease-out;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus-visible {
     background-color: $color-primary-light;
   }
 
@@ -28,11 +29,12 @@
   }
 }
 
-.button[type=reset] {
+.button[type="reset"] {
   color: $color-primary;
   background-color: $color-white;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus-visible {
     color: $color-white;
     background-color: $color-primary-light;
   }
@@ -44,6 +46,6 @@
 
   &:disabled {
     color: $color-white;
-    background-color: $color-gray;
+    background-color: $color-gray-light;
   }
 }

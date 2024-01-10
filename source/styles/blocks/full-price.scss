@@ -1,8 +1,9 @@
 .full-price {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   column-gap: 6px;
-  line-height: $line-height-price;
+  line-height: 32px;
   vertical-align: middle;
 }
 

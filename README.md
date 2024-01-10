@@ -1,5 +1,8 @@
 # Сборка для HTML-курсов в HTML Academy
 
+Студент: [Olesia Isichenko](isichenko.ok@gmail.com).
+Затрачено времени: 39 часов 40 минут
+
 Сборка работает на gulp 4 версии
 
 ## Начало
