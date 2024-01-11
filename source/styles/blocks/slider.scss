@@ -6,6 +6,17 @@
   align-items: stretch;
 }
 
+.slider__button-wrapper {
+  margin: 0 auto;
+  min-width: $mobile-width;
+  max-width: $desktop-width + 160px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .slider__button {
   margin: 0;
   padding: 0;
